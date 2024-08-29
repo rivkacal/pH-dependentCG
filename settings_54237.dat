@@ -1,0 +1,40 @@
+This is a settings file to be used for running MD simulations
+
+3 : whether to use initial conditions
+Hst5_up.dat : name of input file for execution
+Hst5_up.dat, Final_Hst5_up_0.45_54237.dat : initial coordinates/velocities, final conformation
+Hst5_up_0.45_54237.log : log file for current execution
+Traj_Hst5_up_0.45_54237.dat, 1000 : Trajectory file name, Trajectory output frequency(in integer number of time steps)
+NO  : Trajectory distances file name
+Etotal_Hst5_up_0.45_54237.dat, EbyType_Hst5_up_0.45_54237.dat : Total potential energy, Energy by term
+2body_Hst5_up_0.45_54237.dat, 3body_Hst5_up_0.45_54237.dat : 2 body output file, 3 body output file
+NO : whether to write explicit list of all contacts
+NO : whether to write contact ranges files
+TemperatureFile_Hst5_up_0.45_54237.dat : Temperature
+LD : type of execution (MD / LD)
+0.005 : gamma drag coefficient for bath coupling
+110000, 1000 : total steps for this execution, writing to output frequency
+   0.00500   0.20000 : tau, Rescale By Tau
+0.45 : temperature for this execution
+NO : whether there are static atoms in the simulation
+YES : whether to confine model in box
+-800.19, -800.19, -800.19 : box minimal dimensions
+800.19, 800.19, 800.19 : box maximal dimensions
+5.0 : box force coefficient
+YES : whether to use electrostatics in execution
+80 : dielectric constant
+3 : minimum index difference between beads to apply electrostatics
+ENERGY : type of cutoff for electrostatic interaction
+0.005 : maximum fraction of energy for electrostatic interaction
+ATTRACTION : whether to fix potential of electrostaic contacts
+YES : whether to use debye huckel in execution
+YES : whether to use precalculated energy and force values
+0.05 : ionic strength of solution
+1.4 : ionic radius of ions in solution (1.4 for NaCl) 
+1.0 : solventDensity (1 for water) 
+NO : whether to use chirals in execution
+NO : whether to use ellipsoid repulsions in execution
+5.9 : pH for the given run
+YES : whether to use change Histidine's protonation state
+100 : when to check the propensity to protonate neutral His
+100 : when to check the propensity to deprotonate charged His

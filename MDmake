@@ -1,0 +1,67 @@
+
+MD.exe: main.o int.o angl.o bonds.o ljM.o ThreeBody.o rep.o phi.o chiral.o ran.o\
+ sym.o init.o ss.o T.o fs.o write.o LD.o box.o coulomb.o debyehuckel.o\
+ repEllipsoid.o distances.o dhenergytable.o dynamicRange.o
+	f95 -o3  main.o int.o angl.o bonds.o ljM.o ThreeBody.o rep.o \
+	ran.o phi.o chiral.o sym.o LD.o init.o ss.o T.o fs.o write.o box.o \
+	coulomb.o debyehuckel.o  repEllipsoid.o distances.o \
+        dhenergytable.o dynamicRange.o  -o MD.exe
+
+coulomb.o: coulomb.c 
+	gcc -c coulomb.c
+
+debyehuckel.o: debyehuckel.c 
+	gcc -c debyehuckel.c
+
+dhenergytable.o: dhenergytable.c 
+	  gcc -c dhenergytable.c
+
+box.o: box.c 
+	gcc -c box.c
+
+bonds.o: bonds.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    bonds.f
+
+
+distances.o: distances.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    distances.f
+
+angl.o: angl.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    angl.f
+
+phi.o: phi.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    phi.f
+
+chiral.o: chiral.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    chiral.f
+	
+write.o: write.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    write.f
+main.o: main.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    main.f
+sym.o: sym.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    sym.f
+LD.o:LD.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    LD.f
+int.o: int.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    int.f
+ljM.o: ljM.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    ljM.f
+ThreeBody.o: ThreeBody.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    ThreeBody.f
+rep.o: rep.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    rep.f
+repEllipsoid.o: repEllipsoid.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    repEllipsoid.f
+ran.o: ran.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    ran.f
+init.o: init.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    init.f
+ss.o: ss.f  MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    ss.f
+T.o: T.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    T.f
+fs.o: fs.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    fs.f
+dynamicRange.o: dynamicRange.f MD.com
+	f95 -ffixed-line-length-80 -c -O3  -static-libgfortran    dynamicRange.f
